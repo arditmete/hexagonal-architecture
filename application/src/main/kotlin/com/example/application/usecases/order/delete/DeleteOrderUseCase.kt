@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component
 @Component
 class DeleteOrderUseCase(
     var orderService: IOrderService
-) : UseCaseExecute<Order, DeleteOrderInput, DeleteOrderOutput>() {
+) : UseCaseExecute<DeleteOrderInput, DeleteOrderOutput> {
     override fun execute(input: DeleteOrderInput): DeleteOrderOutput {
         val order = orderService.getById(input.id.toLong())
         orderService.delete(order)

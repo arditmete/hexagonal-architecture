@@ -11,7 +11,7 @@ class UpdateOrderUseCase(
     var orderService: IOrderService,
     var orderMapperOutput: IEntityMapper<Order, UpdateOrderOutput>,
     var orderMapperInput: IEntityMapper<Order, UpdateOrderInput>
-): UseCaseExecute<Order, UpdateOrderInput, UpdateOrderOutput>() {
+): UseCaseExecute<UpdateOrderInput, UpdateOrderOutput> {
     override fun execute(input: UpdateOrderInput): UpdateOrderOutput {
         val order = orderMapperInput.toEntity(input, Order::class.java)
         val orderFound = orderService.getById(order.id.toLong())

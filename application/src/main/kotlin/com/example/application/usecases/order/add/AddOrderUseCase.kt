@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component
 class AddOrderUseCase(
     var orderService: IOrderService,
     var orderMapper: IEntityMapper<AddOrderOutput, Order, >
-): UseCaseExecute<AddOrderInput, AddOrderOutput>() {
+): UseCaseExecute<AddOrderInput, AddOrderOutput>{
         override fun execute(input: AddOrderInput): AddOrderOutput {
                 val order = (Order().apply {
                     this.name = input.name

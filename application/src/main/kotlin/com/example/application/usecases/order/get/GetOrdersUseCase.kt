@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component
 @Component
 class GetOrdersUseCase(
     var orderService: IOrderService
-): UseCaseExecute<Order, AddOrderInput?, GetOrdersOutput>() {
+): UseCaseExecute<AddOrderInput?, GetOrdersOutput> {
     override fun execute(input: AddOrderInput?): GetOrdersOutput {
         val orders = orderService.getAll()
         return GetOrdersOutput().apply {
