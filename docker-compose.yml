@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  mysql-development:
+    image: mysql:8.0.17
+    platform: linux/x86_64
+    environment:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: hex
+    ports:
+      - "3308:3306"
