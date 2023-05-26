@@ -1,2 +1,2 @@
 rootProject.name = "hex-arch"
-include("domain", "infrastructure", "application", "launcher")
+include("infrastructure", "domain", "application", "launcher")

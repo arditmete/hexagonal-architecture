@@ -1,5 +1,5 @@
 package com.example.application.usecases
 
-interface UseCaseExecute<U, I, O > {
-    fun execute(input: I): O
+abstract class UseCaseExecute<I, O> {
+    abstract fun execute(input: I): O
 }

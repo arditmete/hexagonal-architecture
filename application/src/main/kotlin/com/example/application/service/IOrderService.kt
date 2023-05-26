@@ -1,9 +1,8 @@
-package com.example.domain.service
+package com.example.application.service
 
 import com.example.domain.data.Order
-import com.example.domain.ports.DataPersistencePort
 
-interface IOrderStore{
+interface IOrderService{
     fun save(data: Order): Order
     fun delete(data: Order)
     fun update(data: Order): Order

@@ -2,7 +2,7 @@ package com.example.infrastructure.adapter
 
 import com.example.domain.data.Order
 import com.example.domain.mapper.IEntityMapper
-import com.example.domain.service.IOrderStore
+import com.example.domain.ports.DataPersistencePort
 import com.example.infrastructure.entity.OrderEntity
 import com.example.infrastructure.repo.OrderRepository
 import org.springframework.stereotype.Service
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service
 class OrderJpaAdapter(
     var orderRepository: OrderRepository,
     var orderMapper: IEntityMapper<OrderEntity, Order>
-):IOrderStore {
+):DataPersistencePort<Order> {
     override fun save(data: Order): Order {
         val orderEntity = orderMapper.toEntity(data, OrderEntity::class.java)
         val orderCreated = orderRepository.save(orderEntity)

@@ -23,7 +23,6 @@ dependencies {
     implementation("mysql:mysql-connector-java:8.0.33")
 
     api(project(":domain"))
-    api(project(":infrastructure"))
     implementation("org.springframework.boot:spring-boot-starter-data-rest:3.1.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

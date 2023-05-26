@@ -14,7 +14,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 @EnableJpaRepositories(basePackages = ["com.example.*"])
 @EnableJpaAuditing
 class LauncherApplication
-
 fun main(args: Array<String>) {
     runApplication<LauncherApplication>(*args)
 }

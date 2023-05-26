@@ -1,17 +1,16 @@
 package com.example.application.usecases.order.add
 
+import com.example.application.service.IOrderService
 import com.example.application.usecases.UseCaseExecute
 import com.example.domain.data.Order
 import com.example.domain.mapper.IEntityMapper
-import com.example.domain.service.impl.OrderService
-import com.example.infrastructure.entity.OrderEntity
 import org.springframework.stereotype.Component
 
 @Component
 class AddOrderUseCase(
-    var orderService: OrderService,
-    var orderMapper: IEntityMapper<AddOrderOutput, Order>
-): UseCaseExecute<Order, AddOrderInput, AddOrderOutput> {
+    var orderService: IOrderService,
+    var orderMapper: IEntityMapper<AddOrderOutput, Order, >
+): UseCaseExecute<AddOrderInput, AddOrderOutput>() {
         override fun execute(input: AddOrderInput): AddOrderOutput {
                 val order = (Order().apply {
                     this.name = input.name

@@ -1,6 +1,7 @@
 package com.example.domain.data
 
 data class Order (
+        var id: String = "",
         var name: String = "",
         var quantity: Int = 0,
         var productName: String = "",
