@@ -1,4 +1,4 @@
-package com.example.application.usecases.order.get
+package com.example.application.usecases.order.get.order
 
 import com.example.domain.data.Order
 
