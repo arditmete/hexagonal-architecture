@@ -21,7 +21,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("com.h2database:h2")
     implementation("mysql:mysql-connector-java:8.0.33")
-
     api(project(":domain"))
     implementation("org.springframework.boot:spring-boot-starter-data-rest:3.1.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")

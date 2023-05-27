@@ -1,6 +1,8 @@
 package com.example.infrastructure.adapter
 
 import com.example.domain.data.Order
+import com.example.domain.exceptions.CustomException
+import com.example.domain.exceptions.ErrorCode
 import com.example.domain.mapper.IEntityMapper
 import com.example.domain.ports.DataPersistencePort
 import com.example.infrastructure.entity.OrderEntity
@@ -36,6 +38,7 @@ class OrderJpaAdapter(
 
     override fun getById(id: Long): Order {
         val orderEntity = orderRepository.findById(id.toInt())
+        if (orderEntity.isEmpty) throw CustomException(ErrorCode.ORDER_NOT_FOUND)
         return orderMapper.toObject(orderEntity.get(), Order::class.java)
     }
 }
